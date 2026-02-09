@@ -29,9 +29,10 @@ By this way, I can make sure maximum no of consecutive boards are removed and at
 
 ### Derived Formula
 
-\[
+$$
 ans = n - \left\lfloor \frac{n}{w} \right\rfloor
-\]
+$$
+
 
 ---
 
@@ -42,9 +43,9 @@ For:
 - `n = 9`
 - `w = 3`
 
-\[
-ans = 9 - \lfloor 9/3 \rfloor = 9-3 = 6
-\]
+$$
+ans = 9 - \left\lfloor \frac{9}{3} \right\rfloor = 9 - 3 = 6
+$$
 
 
 --- 
