@@ -142,3 +142,14 @@ int main(){
     return 0;
 }
 ```
+
+
+### Mistake I Made
+
+At first, I assumed that the bank with the maximum initial amount should always be chosen as the receiver, since it already contains the most money.
+
+However, this is not always optimal.  
+The reason is that different banks can contribute a different number of transferable chunks, and choosing a particular bank as the receiver also means it cannot donate its own chunks.
+
+Therefore, we must consider **every bank** as a possible final receiver and compute the resulting amount, then take the maximum.
+
