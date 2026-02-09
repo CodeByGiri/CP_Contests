@@ -68,3 +68,77 @@ We compute this value for every bank and then whichever gives the maximum, we re
 
 Banks:
 
+
+x=5,y=4
+
+Chunks:
+
+- 10/5 = 2  
+- 9/5 = 1  
+- 8/5 = 1  
+- 7/5 = 1  
+
+So:
+
+$$
+totalChunks = 5
+$$
+
+Now, if we take bank with 9 as receiver:
+
+$$
+9 + (5-1)\cdot 4 = 25
+$$
+
+So the answer is **25**.
+
+---
+
+### Complexity:
+
+We have **t** test cases.
+
+Time: **O(n)** per test case.  
+Space: **O(n)**
+
+---
+
+### C++ Implementation:
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int t;
+    cin>>t;
+
+    while(t--){
+        int n;
+        long long x,y;
+        cin >> n >> x >> y;
+
+        vector<long long> a(n) , chunks(n);
+        long long totalChunks = 0;
+
+        for(int i = 0; i<n ; i++){
+            cin >> a[i];
+            chunks[i] = a[i]/x;
+            totalChunks += chunks[i];
+        }
+
+        long long ans = 0;
+        for(int i=0; i<n ; i++){
+            ans = max(ans,a[i]+(totalChunks - chunks[i])*y);
+        }
+
+        cout << ans <<  "\n";
+    }
+
+    return 0;
+}
+```
