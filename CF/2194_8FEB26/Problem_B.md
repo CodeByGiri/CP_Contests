@@ -4,7 +4,9 @@
 
 \### Idea:
 
-We have `n` banks with balances `a\[i]`.
+
+
+We have n banks with balances a\[i].
 
 
 
@@ -12,12 +14,21 @@ A transfer here works under some specific conditions:
 
 
 
-* We remove exactly `x` rubles from one bank.
-* The other bank will only receive only `y` rubles and is considered to be as a fee.
+We remove exactly x rubles from one bank.  
+
+The other bank will only receive only y rubles and is considered to be as a fee.  
 
 
 
-So after each transfer, there is a loss of $x-y$.
+So after each transfer, there is a loss of:
+
+
+
+$$
+
+x - y
+
+$$
 
 
 
@@ -33,11 +44,11 @@ The objective of the problem is to maximize the amount of money that can end up 
 
 
 
-A bank with `a\[i]` rubles can only donate money in groups of `x` rubles. i.e, In chunks of size `x` each.
+A bank with a\[i] rubles can only donate money in groups of x rubles. i.e, In chunks of size x each.
 
 
 
-Therefore, the no of chunks we can transfer from a bank `i` is :
+Therefore, the no of chunks we can transfer from a bank i is :
 
 
 
@@ -49,7 +60,7 @@ $$
 
 
 
-So with the help of this formula, we can identify the total number of chunks available by adding them in a variable \*\*totalChunks\*\* as we traverse through different banks `a\[i]`
+So with the help of this formula, we can identify the total number of chunks available by adding them in a variable \*\*totalChunks\*\* as we traverse through different banks a\[i]
 
 
 
@@ -71,16 +82,19 @@ $$
 
 \### Choosing the Final Bank
 
-Suppose we choose a bank `i` as the receiver.
+
+
+Suppose we choose a bank i as the receiver.
 
 
 
-The money accumulated in  this bank is given as follows:
+The money accumulated in this bank is given as follows:
 
 
 
-* It retains its money : `a\[i]`
-* All the other banks transfer their chunks into this.
+It retains its money : a\[i]  
+
+All the other banks transfer their chunks into this.  
 
 
 
@@ -96,7 +110,7 @@ $$
 
 
 
-Each chunk adds `y` rubles, so final money in the receiver bank `i` becomes:
+Each chunk adds y rubles, so final money in the receiver bank i becomes:
 
 
 
@@ -109,6 +123,18 @@ $$
 
 
 We compute this value for every bank and then whichever gives the maximum, we return it.
+
+
+
+---
+
+
+
+\### Example
+
+
+
+Banks:
 
 
 
@@ -126,6 +152,8 @@ Banks:
 
 \[10,9,8,7]
 
+
+
 x=5,y=4
 
 
@@ -134,10 +162,13 @@ Chunks:
 
 
 
-* $10/5 = 2$
-* $9/5 = 1$
-* $8/5 = 1$
-* $7/5 = 1$
+\- 10/5 = 2  
+
+\- 9/5 = 1  
+
+\- 8/5 = 1  
+
+\- 7/5 = 1  
 
 
 
@@ -153,7 +184,7 @@ $$
 
 
 
-Now, if we take bank with `9` as receiver:
+Now, if we take bank with 9 as receiver:
 
 
 
@@ -181,8 +212,9 @@ We have \*\*t\*\* test cases.
 
 
 
-* Time: \*\*O(n)\*\* per test case.
-* Space: \*\*O(n)\*\*
+Time: \*\*O(n)\*\* per test case.  
+
+Space: \*\*O(n)\*\*
 
 
 
@@ -243,8 +275,6 @@ int main(){
 &nbsp;           totalChunks += chunks\[i];
 
 &nbsp;       }
-
-
 
 
 
