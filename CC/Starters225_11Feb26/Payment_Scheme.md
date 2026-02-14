@@ -65,5 +65,14 @@ $$
  ### C++ Implementation:
 
 ```cpp
+#include <bits/stdc++.h>
+using namespace std;
 
+int main() {
+	int X;
+	cin >> X;
+	
+	cout << min(300, 100 + 4*X) << "\n";
+	return 0;
+}
 ```
