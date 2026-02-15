@@ -33,7 +33,7 @@ So, we subtract the minimum loss.
 
 ### Derived Formula:
 $$
-ans = \sumA[i] - \min(A[i] - B[i])
+ans = \sum A[i] - \min(A[i] - B[i])
 $$
 
 ---
