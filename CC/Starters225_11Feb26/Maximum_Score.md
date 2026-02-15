@@ -75,3 +75,43 @@ We have **t** test cases.
 - Space: **O(n)**
 
 ---
+### C++ Implementation:
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	
+	int t;
+	cin >> t;
+	
+	while(t--){
+	    int n;
+	    cin >> n;
+	    
+	    vector<int> A(n) , B(n);
+	    for(int i=0 ; i<n ; i++){
+	        cin >> A[i];
+	    }
+	    
+	    long long total = 0;
+	    int minLoss = INT_MAX;
+	    
+	    for(int i=0 ; i<n ; i++){
+	        cin >> B[i];
+	        
+	        total += A[i];
+	        minLoss = min(minLoss , A[i] - B[i]);
+	    }
+	    
+	    total -= minLoss;
+	    cout << total << "\n";
+	}
+	
+	return 0;
+
+}
+```
