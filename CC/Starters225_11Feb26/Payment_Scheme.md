@@ -1,5 +1,5 @@
 ## Payment Scheme
-## Division 4 Easy Level Problem
+## Division 4 Problem
 
 ### Idea: 
 Chef has two payment schemes:
