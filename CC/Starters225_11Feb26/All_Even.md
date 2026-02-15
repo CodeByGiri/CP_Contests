@@ -1,4 +1,4 @@
-## Problem 2. All Even
+## All Even
 
 ### Idea:
 We have an array of `n` numbers.
