@@ -39,13 +39,12 @@ So the answer is :
 
 ### Example:
 
-\[
-[1,7,6,7,67,5]
-\]
+Array: [1,7,6,7,67,5]
 
-\[
+
+$$
     1 \times 67 = 67
-\]
+$$
 
 So, the answer is **YES**.
 
