@@ -50,3 +50,12 @@ So the answer is :
 So, the answer is **YES**.
 
 ---
+
+### Complexity
+
+We check the array once.
+
+- Time: **O(n)**
+- Space: **O(1)**
+
+---
