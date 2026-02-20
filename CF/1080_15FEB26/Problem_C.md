@@ -134,3 +134,63 @@ O(6)
 $$
 
 ---
+
+### C++ Implementation
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+bool ok(int x, int y){
+    if(x == y) return false;
+    if (x+y == 7) return false;
+    return true;
+}
+
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int t;
+    cin >> t;
+
+    while(t--){
+        int n;
+        cin >> n;
+
+        vector<int> a(n);
+        for(int i=0 ; i<n ; i++) cin >> a[i];
+
+        const int INF = 1e9;
+
+        vector<int> dp(7, INF);
+
+        for(int v = 1; v <= 6 ; v++){
+            if(a[0] == v) dp[v] = 0;
+
+            else dp[v] = 1;
+        }
+
+        for(int i = 1; i<n ; i++){
+            vector<int> newdp(7,INF);
+
+            for(int v = 1; v<=6 ; v++){
+                int cost = (a[i] == v ? 0 : 1);
+
+                for(int u = 1; u<=6 ; u++){
+                    if(ok(u,v)){
+                        newdp[v] = min(newdp[v], dp[u] + cost);
+                    }
+                }
+            }
+            dp = newdp;
+        }
+
+        int ans = INF;
+        for(int v = 1; v<=6 ; v++){
+            ans = min(ans, dp[v]);
+        }
+        cout << ans << "\n";
+    }
+}
+```
