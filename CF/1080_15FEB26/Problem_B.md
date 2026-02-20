@@ -69,7 +69,7 @@ Example:
 Fast Computation:
 
 $$
-oddPart(x) = x >> ctx(x)
+oddPart(x) = x >> ctz(x)
 $$
 
 ---
