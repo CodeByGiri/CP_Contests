@@ -28,7 +28,7 @@ $$
 Since ice cream can't go below 0, the final answer is:
 
 $$
-\max(0, \; X - YN)
+\max(0 \; X - YN)
 $$
 
 ---
