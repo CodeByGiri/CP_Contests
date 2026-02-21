@@ -61,3 +61,28 @@ $$
 
 - Time: **O(1)**
 - Memory: **O(1)**
+
+---
+
+### C++ Implementation
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	
+	int t;
+	cin >> t;
+	
+	while(t--){
+
+        int X,Y,N;
+        cin >> X >> Y >> N;
+
+        cout << max(0, X - Y*N) << "\n";
+	}
+
+}
+```
