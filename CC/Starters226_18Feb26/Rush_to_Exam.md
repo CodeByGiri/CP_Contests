@@ -24,7 +24,7 @@ If this value is greater than or equal to `M`, then Chef can finish reading.
 So the condition becomes:
 
 $$
-N \tims A \ge M
+N \times A \ge M
 $$
 
 ---
@@ -50,3 +50,4 @@ Since `6 >= 6`, the answer is:
 - Complexity: **O(1)**
 
 ---
+
