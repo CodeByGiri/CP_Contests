@@ -92,3 +92,32 @@ We only do arithmetic.
 - Memory: **O(1)**.
 
 ---
+
+### C++ Implementation
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	
+	int t;
+	cin >> t;
+	
+	while(t--){
+
+        int  N, A, B;
+        cin >> N >> A >> B;
+        
+        long d = A - B;
+        
+        while(N >= A)
+            N-= d;
+
+        cout << N << "\n";
+	}
+	return  0;
+}
+```
