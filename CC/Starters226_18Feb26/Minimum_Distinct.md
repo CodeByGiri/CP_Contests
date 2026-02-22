@@ -113,3 +113,60 @@ Overall:
 
 ---
 
+### C++ Implementation
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    
+    int t;
+    cin >> t;
+    
+    while(t--) {
+        int N, K;
+        cin >> N >> K;
+
+        vector<int> A(N);
+        map<int, int> freq;
+
+        for(int i = 0 ; i < N; i++) {
+            cin >> A[i];
+            freq[A[i]]++;
+        }
+
+        //First value stored separately
+        int first_element = A[0]; 
+
+        vector<int> counts;
+        for(auto const& [val, count] : freq) {
+
+            //First value cannot be removed hence not considered in array with removable counts
+            if(val != first_element) {
+                counts.push_back(count);
+            }
+        }
+
+        // Sort the remaining frequencies
+        sort(counts.begin(), counts.end());
+
+        int removed = 0;
+        for(int c : counts) {
+            if(K >= c) {
+                K -= c;
+                removed++;
+            } else {
+                break;
+            }
+        }
+        
+        //No of distinc elements initially is size of the freq map, and new count is given
+        cout << freq.size() - removed << "\n";
+    }
+    
+    return 0;
+}
+```
