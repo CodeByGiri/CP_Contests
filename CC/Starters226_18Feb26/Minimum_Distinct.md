@@ -47,7 +47,7 @@ we must convert all its occurences.
 So removing one distinct value costs:
 
 $$
-f \text{operations}
+f \text{ operations}
 $$
 
 To minimize distinct values, we remove the smallest groups first.
