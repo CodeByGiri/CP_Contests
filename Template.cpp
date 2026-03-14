@@ -6,7 +6,6 @@ using namespace std;
 #define endl '\n'
 
 void solve() {
-    // Write solution for ONE test case here
 
 }
 
@@ -15,7 +14,7 @@ int main() {
     cin.tie(nullptr);
 
     int t;
-    cin >> t;      // remove if problem has no test cases
+    cin >> t;     
 
     while (t--) {
         solve();
